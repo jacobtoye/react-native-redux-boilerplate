@@ -1,3 +1,3 @@
-import ReduxWrapper from './src/containers/ReduxWrapper';
+import App from './src/containers/App';
 
-export default ReduxWrapper;
+export default App;

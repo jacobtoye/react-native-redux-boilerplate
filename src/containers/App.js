@@ -1,9 +1,10 @@
 import React from 'react';
-import { StatusBar, Text, View } from 'react-native';
+import { StatusBar } from 'react-native';
 import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
-import { AppLoading } from 'expo';
+
+import Navigator from './Navigator';
 
 import reducers from '../reducers';
 
@@ -20,35 +21,22 @@ const store = createStore(reducers, {}, applyMiddleware(...middleware));
 
 // TODO: add in redux-persist
 
-class ReduxWrapper extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
 
     StatusBar.setHidden(true);
   }
 
-  state = {
-    appIsReady: false,
-  };
-
-  componentDidMount() {
-    this.setState({ appIsReady: true });
-  }
-
   render() {
-    if (!this.state.appIsReady) {
-      return <AppLoading />;
-    }
+    // TODO: we might want to use Expo.AppLoading to make sure we've loaded everything
 
-    // TODO: remove the View
     return (
       <Provider store={store}>
-        <View>
-          <Text>Woot got me some react-native with the redux!</Text>
-        </View>
+        <Navigator />
       </Provider>
     );
   }
 }
 
-export default ReduxWrapper;
+export default App;
