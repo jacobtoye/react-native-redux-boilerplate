@@ -3,7 +3,7 @@ import { TouchableOpacity, Text } from 'react-native';
 
 import styles from './styles';
 
-const Button = props => (
+export const Button = props => (
   <TouchableOpacity
     style={[
       styles.container,
@@ -35,5 +35,3 @@ Button.defaultProps = {
   containerColor: '#ff69b4',
   textColor: 'white',
 };
-
-export default Button;

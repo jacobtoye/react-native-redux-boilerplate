@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
 
-import Button from '../components/Button';
+import {
+  Button,
+  ContainerView,
+} from '../../components';
 
-class WelcomeScreen extends Component {
+
+export class WelcomeScreen extends Component {
   render() {
     return (
-      <View>
+      <ContainerView>
         <Text>Welcome</Text>
         <Button
           text="Sign in"
@@ -19,7 +23,7 @@ class WelcomeScreen extends Component {
           }}
           onPress={() => {this.props.navigation.navigate('Home')}}
         />
-      </View>
+      </ContainerView>
     );
   }
 }
