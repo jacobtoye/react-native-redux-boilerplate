@@ -1,28 +1,20 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
 
 import {
-  Button,
   ContainerView,
+  DisplayText,
 } from '../../components';
-
+import * as Theme from '../../constants/theme';
 
 export class WelcomeScreen extends Component {
   render() {
     return (
-      <ContainerView>
-        <Text>Welcome</Text>
-        <Button
-          text="Sign in"
-          containerStyle={{
-            borderRadius: 5,
-            elevation: 1,
-            marginLeft: 60,
-            marginRight: 60,
-            marginTop: 60,
-          }}
-          onPress={() => {this.props.navigation.navigate('Home')}}
-        />
+      <ContainerView
+        containerStyle={{
+          backgroundColor: Theme.Colors.ACCENT,
+          paddingTop: 72,
+      }}>
+        <DisplayText>Welcome home!</DisplayText>
       </ContainerView>
     );
   }

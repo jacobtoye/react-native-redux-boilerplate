@@ -1,13 +1,13 @@
 import { StackNavigator } from 'react-navigation';
 
 import {
-  HomeScreen,
+  SignInScreen,
   WelcomeScreen,
 } from '../screens';
 
 const Navigator = StackNavigator({
+  SignIn: { screen: SignInScreen },
   Welcome: { screen: WelcomeScreen },
-  Home: { screen: HomeScreen },
 }, {
   headerMode: 'none',
   navigationOptions: {

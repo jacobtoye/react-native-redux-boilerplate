@@ -1,18 +1,23 @@
 export const Colors = {
-  BACKGROUND: '#0c0b0c',
+  BACKGROUND: '#2e2f40',
 
-  PRIMARY: '#edcac3',
-  ACCENT: '#d3a165',
+  PRIMARY: '#d23fcc',
+  ACCENT: '#08ce94',
 
-  BLACK_TEXT_PRIMARY: '#0c0b0c',
+  DARK_TEXT_PRIMARY: '#0c0b0c',
 
-  WHITE_TEXT_PRIMARY: 'rgba(255, 255, 255, 1)',
+  LIGHT_TEXT_PRIMARY: 'rgba(255, 255, 255, 1)',
 };
 
-export const TextSizes = {
+export const Text = {
   DISPLAY: 24,
   TITLE: 20,
   SUB_TITLE: 16,
   BODY: 14,
   DETAIL: 12,
+};
+
+export const Grid = {
+  COLUMN: 24,
+  ROW: 24,
 };
