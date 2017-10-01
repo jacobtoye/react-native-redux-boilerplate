@@ -4,8 +4,8 @@ import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 
-import Navigator from './Navigator';
-
+import rootSaga from 'sagas';
+import ReduxAppNavigator from './ReduxAppNavigator';
 import reducers from '../reducers';
 
 const sagaMiddleware = createSagaMiddleware();
@@ -16,8 +16,7 @@ const middleware = [
 
 const store = createStore(reducers, {}, applyMiddleware(...middleware));
 
-// TODO: user redux-saga
-// sagaMiddleware.run(rootSaga);
+sagaMiddleware.run(rootSaga);
 
 // TODO: add in redux-persist
 
@@ -33,7 +32,7 @@ class App extends React.Component {
 
     return (
       <Provider store={store}>
-        <Navigator />
+        <ReduxAppNavigator />
       </Provider>
     );
   }
