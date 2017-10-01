@@ -1,4 +1,5 @@
-import { take, call, put, fork, race } from 'redux-saga/effects';
+import { take, call, put, race } from 'redux-saga/effects';
+import { NavigationActions } from 'react-navigation';
 
 import {
   SENDING_REQUEST,
@@ -83,7 +84,7 @@ const loginFlow = function* loginFlow() {
       // TODO: clear the login form
       // yield put({ type: CHANGE_FORM, newFormState: { username: '', password: '' } });
 
-      // User react-navigation to redirect back to the appropriate place
+      yield put(NavigationActions.navigate({ routeName: 'Welcome' }));
     }
   }
 };

@@ -14,7 +14,7 @@ export const SignInScreen = props => (
         marginLeft: Theme.Grid.COLUMN * 2,
         marginRight: Theme.Grid.COLUMN * 2,
       }}
-      onPress={() => { props.navigation.navigate('Welcome'); }}
+      onPress={() => { props.login({ username: '', password: '' }); }}
     />
   </ContainerView>
 );
