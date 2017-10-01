@@ -10,7 +10,10 @@ import {
 } from 'actions/types';
 import * as AuthService from 'services/auth';
 
-export function* authorize({ username, password, isRegistering = false }) {
+const a = function* aa() {};
+export { a };
+
+const authorize = function* authorize({ username, password, isRegistering = false }) {
   yield put({ type: SENDING_REQUEST, sending: true });
 
   try {
@@ -36,12 +39,12 @@ export function* authorize({ username, password, isRegistering = false }) {
   } finally {
     yield put({ type: SENDING_REQUEST, sending: false });
   }
-}
+};
 
 /**
  * Effect to handle logging out
  */
-export function* logout() {
+const logout = function* logout() {
   yield put({ type: SENDING_REQUEST, sending: true });
 
   // Similar to above, we try to log out by calling the `logout` function in the
@@ -56,12 +59,12 @@ export function* logout() {
     yield put({ type: REQUEST_ERROR, error: error.message });
     return false;
   }
-}
+};
 
 /**
  * Log in saga
  */
-export function* loginFlow() {
+const loginFlow = function* loginFlow() {
   while (true) {
     const request = yield take(LOGIN_REQUEST);
     const { username, password } = request.data;
@@ -83,14 +86,14 @@ export function* loginFlow() {
       // User react-navigation to redirect back to the appropriate place
     }
   }
-}
+};
 
 /**
  * Log out saga
  * This is basically the same as the `if (winner.logout)` of above, just written
  * as a saga that is always listening to `LOGOUT` actions
  */
-export function* logoutFlow() {
+const logoutFlow = function* logoutFlow() {
   while (true) {
     yield take(LOGOUT);
     yield put({ type: SET_AUTH, newAuthState: false });
@@ -100,13 +103,13 @@ export function* logoutFlow() {
     // TODO: redirect back to the login screen
     // forwardTo('/')
   }
-}
+};
 
 /**
  * Register saga
  * Very similar to log in saga!
  */
-export function* registerFlow() {
+const registerFlow = function* registerFlow() {
   while (true) {
     const request = yield take(REGISTER_REQUEST);
     const { username, password } = request.data;
@@ -131,4 +134,10 @@ export function* registerFlow() {
       // User react-navigation to redirect back to the appropriate place
     }
   }
-}
+};
+
+export {
+  loginFlow,
+  logoutFlow,
+  registerFlow,
+};

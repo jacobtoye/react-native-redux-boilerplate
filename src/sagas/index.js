@@ -6,10 +6,12 @@ import {
   registerFlow,
 } from './auth';
 
-export default function* root() {
+const root = function* root() {
   yield [
     yield fork(loginFlow),
     yield fork(logoutFlow),
     yield fork(registerFlow),
   ];
-}
+};
+
+export default root;
