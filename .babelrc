@@ -9,10 +9,13 @@
             "root": ["./src"],
             "extensions": [".js", ".ios.js", ".android.js"],
             "alias": {
+              "actions": "./actions",
               "components": "./components",
               "constants": "./constants",
               "containers": "./containers",
               "reducers": "./reducers",
+              "sagas": "./sagas",
+              "services": "./services",
               "screens": "./screens"
             }
           }
