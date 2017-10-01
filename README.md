@@ -1,5 +1,6 @@
 TODO:
 
+ * Move route strings into constants/routes.ja
  * UiState reducer
  * Add Login, Welcome -> New screen (login is replaced) and Header
  * Add loading
