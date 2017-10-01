@@ -3,7 +3,7 @@ import { StackNavigator } from 'react-navigation';
 import {
   SignInScreen,
   WelcomeScreen,
-} from '../screens';
+} from 'screens';
 
 const Navigator = StackNavigator({
   SignIn: { screen: SignInScreen },

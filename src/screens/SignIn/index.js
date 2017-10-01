@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import {
   Button,
   ContainerView,
-} from '../../components';
-import * as Theme from '../../constants/theme';
+} from 'components';
+import * as Theme from 'constants/theme';
 
 export class SignInScreen extends Component {
   render() {

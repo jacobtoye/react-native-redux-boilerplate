@@ -24,5 +24,10 @@
       // and https://github.com/airbnb/javascript/pull/1482
       "jsx-a11y/href-no-hash": "off",
       "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }]
+    },
+    "settings": {
+      "import/resolver": {
+        "babel-module": {}
+      }
     }
   }

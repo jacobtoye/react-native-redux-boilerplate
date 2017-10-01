@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import {
   ContainerView,
   DisplayText,
-} from '../../components';
-import * as Theme from '../../constants/theme';
+} from 'components';
+import * as Theme from 'constants/theme';
 
 export class WelcomeScreen extends Component {
   render() {
