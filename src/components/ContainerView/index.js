@@ -8,3 +8,5 @@ export const ContainerView = props => (
     {props.children}
   </View>
 );
+
+export default ContainerView;

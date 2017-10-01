@@ -30,3 +30,5 @@ Button.defaultProps = {
   containerStyle: {},
   textStyle: {},
 };
+
+export default Button;

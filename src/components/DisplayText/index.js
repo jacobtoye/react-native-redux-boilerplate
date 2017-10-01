@@ -8,3 +8,5 @@ export const DisplayText = props => (
     {props.children}
   </Text>
 );
+
+export default DisplayText;

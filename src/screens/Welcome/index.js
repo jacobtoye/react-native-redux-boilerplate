@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import {
   ContainerView,
@@ -6,18 +6,15 @@ import {
 } from 'components';
 import * as Theme from 'constants/theme';
 
-export class WelcomeScreen extends Component {
-  render() {
-    return (
-      <ContainerView
-        containerStyle={{
-          backgroundColor: Theme.Colors.ACCENT,
-          paddingTop: 72,
-      }}>
-        <DisplayText>Welcome home!</DisplayText>
-      </ContainerView>
-    );
-  }
-}
+export const WelcomeScreen = () => (
+  <ContainerView
+    containerStyle={{
+      backgroundColor: Theme.Colors.ACCENT,
+      paddingTop: 72,
+    }}
+  >
+    <DisplayText>Welcome home!</DisplayText>
+  </ContainerView>
+);
 
 export default WelcomeScreen;
