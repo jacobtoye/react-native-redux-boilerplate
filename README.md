@@ -1,7 +1,12 @@
 TODO:
 
- * Add in support for theming
- * Add font
- * Add in redux-saga and support login flow
+ * UiState reducer
+ * Add Login, Welcome -> New screen (login is replaced) and Header
  * Add loading
+ * Add font
+
+Sources:
+
+ * Basic reference https://github.com/ipeedy/react-native-boilerplate
+ * redux-saga Login flow = https://github.com/mxstbr/login-flow
  
