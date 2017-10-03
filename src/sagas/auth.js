@@ -9,6 +9,7 @@ import {
   LOGOUT,
   REQUEST_ERROR,
 } from 'actions/types';
+import { MAIN_ROUTE } from 'constants/routes';
 import * as AuthService from 'services/auth';
 
 const a = function* aa() {};
@@ -84,7 +85,14 @@ const loginFlow = function* loginFlow() {
       // TODO: clear the login form
       // yield put({ type: CHANGE_FORM, newFormState: { username: '', password: '' } });
 
-      yield put(NavigationActions.navigate({ routeName: 'Welcome' }));
+      // TODO: should jut fire a USER_LOGGED_IN acton and do this in the reducer
+      const resetAction = NavigationActions.reset({
+        index: 0,
+        actions: [
+          NavigationActions.navigate({ routeName: MAIN_ROUTE }),
+        ],
+      });
+      yield put(resetAction);
     }
   }
 };

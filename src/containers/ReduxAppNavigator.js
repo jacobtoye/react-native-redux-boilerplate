@@ -7,12 +7,24 @@ import {
   StackNavigator,
 } from 'react-navigation';
 
-import { WelcomeScreen } from 'screens';
+import * as Routes from 'constants/routes';
+import { WelcomeScreen, ProfileScreen } from 'screens';
 import SignInScreen from './SignInScreen';
 
+export const MainNavigator = StackNavigator({
+  [Routes.WELCOME_ROUTE]: { screen: WelcomeScreen },
+  [Routes.PROFILE_ROUTE]: { screen: ProfileScreen },
+}, {
+  initialRouteName: Routes.WELCOME_ROUTE,
+  headerMode: 'none',
+  navigationOptions: {
+    tabBarVisible: false,
+  },
+});
+
 export const AppNavigator = StackNavigator({
-  SignIn: { screen: SignInScreen },
-  Welcome: { screen: WelcomeScreen },
+  [Routes.SIGN_IN_ROUTE]: { screen: SignInScreen },
+  [Routes.MAIN_ROUTE]: { screen: MainNavigator },
 }, {
   headerMode: 'none',
   navigationOptions: {
