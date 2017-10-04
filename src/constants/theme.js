@@ -6,7 +6,7 @@ export const Colors = {
 
   DARK_TEXT_PRIMARY: '#0c0b0c',
 
-  LIGHT_TEXT_PRIMARY: 'rgba(255, 255, 255, 1)',
+  LIGHT_TEXT_PRIMARY: '#ffffff',
 };
 
 export const Text = {
