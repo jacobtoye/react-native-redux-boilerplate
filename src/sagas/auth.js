@@ -1,5 +1,4 @@
 import { take, call, put, race } from 'redux-saga/effects';
-import { NavigationActions } from 'react-navigation';
 
 import {
   SENDING_REQUEST,
@@ -8,8 +7,8 @@ import {
   SET_AUTH,
   LOGOUT,
   REQUEST_ERROR,
+  RESET_TO_MAIN,
 } from 'actions/types';
-import { MAIN_ROUTE } from 'constants/routes';
 import * as AuthService from 'services/auth';
 
 const a = function* aa() {};
@@ -85,14 +84,7 @@ const loginFlow = function* loginFlow() {
       // TODO: clear the login form
       // yield put({ type: CHANGE_FORM, newFormState: { username: '', password: '' } });
 
-      // TODO: should jut fire a USER_LOGGED_IN acton and do this in the reducer
-      const resetAction = NavigationActions.reset({
-        index: 0,
-        actions: [
-          NavigationActions.navigate({ routeName: MAIN_ROUTE }),
-        ],
-      });
-      yield put(resetAction);
+      yield put({ type: RESET_TO_MAIN });
     }
   }
 };
