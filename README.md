@@ -1,12 +1,9 @@
 TODO:
 
  * Navigation.
-   * Add Header and have button that navigates to Profile screen.
-   * Add button which resets back to SignIn screen
- * UiState reducer
- * Add Login, Welcome -> New screen (login is replaced) and Header
+   * -Add Header and have button that navigates to Profile screen.-
+   * Add button which resets back to SignIn screen. (right button and have a special handler in the nav reducer)
  * Add loading
- * Add font
 
 Sources:
 
