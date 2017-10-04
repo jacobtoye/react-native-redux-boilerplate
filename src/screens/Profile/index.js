@@ -1,4 +1,5 @@
 import React from 'react';
+import { TouchableOpacity } from 'react-native';
 
 import {
   ContainerView,
@@ -6,14 +7,16 @@ import {
 } from 'components';
 import * as Theme from 'constants/theme';
 
-export const ProfileScreen = () => (
+export const ProfileScreen = ({ onPress }) => (
   <ContainerView
     containerStyle={{
-      backgroundColor: Theme.Colors.PRIMARY,
+      backgroundColor: Theme.Colors.ACCENT,
       paddingTop: 72,
     }}
   >
-    <DisplayText>It's all about you...</DisplayText>
+    <TouchableOpacity onPress={onPress}>
+      <DisplayText>Its all about you...</DisplayText>
+    </TouchableOpacity>
   </ContainerView>
 );
 
