@@ -5,37 +5,28 @@ import {
   addNavigationHelpers,
   NavigationActions,
   StackNavigator,
+  TabNavigator,
 } from 'react-navigation';
 
-import * as Theme from 'constants/theme';
 import * as Routes from 'constants/routes';
 import ProfileScreen from './ProfileScreen';
 import SignInScreen from './SignInScreen';
 import WelcomeScreen from './WelcomeScreen';
 
-// TODO: for some unknown reason I cannot use the Theme.ACCENT!!???
-export const MainNavigator = StackNavigator({
+const MainTabNavigator = TabNavigator({
   [Routes.WELCOME_ROUTE]: { screen: WelcomeScreen },
   [Routes.PROFILE_ROUTE]: { screen: ProfileScreen },
 }, {
-  headerMode: 'screen',
   navigationOptions: {
-    headerTitleStyle: {
-      color: Theme.Colors.LIGHT_TEXT_PRIMARY,
-      alignSelf: 'center',
-    },
-    headerStyle: {
-      backgroundColor: Theme.Colors.ACCENT,
-      elevation: 0,
-      shadowOpacity: 0,
-    },
-    headerTintColor: Theme.Colors.LIGHT_TEXT_PRIMARY,
+    tabBarVisible: false,
+    swipeEnabled: true,
+    animationEnabled: true,
   },
 });
 
 export const AppNavigator = StackNavigator({
   [Routes.SIGN_IN_ROUTE]: { screen: SignInScreen },
-  [Routes.MAIN_ROUTE]: { screen: MainNavigator },
+  [Routes.MAIN_ROUTE]: { screen: MainTabNavigator },
 }, {
   headerMode: 'none',
 });
