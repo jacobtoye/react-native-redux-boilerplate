@@ -15,7 +15,7 @@ export const ProfileScreen = ({ onPress }) => (
     }}
   >
     <TouchableOpacity onPress={onPress}>
-      <DisplayText>Swipe left to go back.</DisplayText>
+      <DisplayText>Swipe left to go back. Tap to sign out.</DisplayText>
     </TouchableOpacity>
   </ContainerView>
 );

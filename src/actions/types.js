@@ -8,4 +8,4 @@ export const CLEAR_ERROR = 'CLEAR_ERROR';
 export const SENDING_REQUEST = 'SENDING_REQUEST';
 
 export const RESET_TO_MAIN = 'RESET_TO_MAIN';
-export const RESET_TO_LOGIN = 'RESET_TO_LOGIN';
+export const RESET_TO_SIGN_IN = 'RESET_TO_SIGN_IN';
