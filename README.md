@@ -30,5 +30,5 @@ Open on phone using the [Expo](https://expo.io/) app.
 
 ## TODO
 
- - [] Hardware back button doesn't navigate back to previous screen, rather it closes the app. See:  https://github.com/react-community/react-navigation/issues/1349
- - [] __Splash screen__ can be added to the AppNavigator. See: https://github.com/react-community/react-navigation/issues/156#issuecomment-276974937
+ - [ ] Hardware back button doesn't navigate back to previous screen, rather it closes the app. See:  https://github.com/react-community/react-navigation/issues/1349
+ - [ ] __Splash screen__ can be added to the AppNavigator. See: https://github.com/react-community/react-navigation/issues/156#issuecomment-276974937
