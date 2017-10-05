@@ -2,10 +2,6 @@
 
 > A little React Native boilerplate created to pull together some of the common libraries used to create sweet mobile apps. 
 
-## Demo
-
-- Run with Expo: [React Native Redux Boilerplate](https://expo.io/@bkdev/react-native-boilerplate)
-
 ## Features
 
 - [x] [React Native (Expo)](https://docs.expo.io/versions/v21.0.0/index.html)
