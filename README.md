@@ -1,12 +1,34 @@
-TODO:
+# React Native + Redux Boilerplaye
 
- * Navigation.
-   * -Add Header and have button that navigates to Profile screen.-
-   * Add button which resets back to SignIn screen. (right button and have a special handler in the nav reducer)
- * Add loading
+> A little React Native boilerplate created to pull together some of the common libraries used to create sweet mobile apps. 
 
-Sources:
+## Demo
 
- * Basic reference https://github.com/ipeedy/react-native-boilerplate
- * redux-saga Login flow = https://github.com/mxstbr/login-flow
- * Splash screen: https://github.com/react-community/react-navigation/issues/156#issuecomment-276974937
+- Run with Expo: [React Native Redux Boilerplate](https://expo.io/@bkdev/react-native-boilerplate)
+
+## Features
+
+- [x] [React Native (Expo)](https://docs.expo.io/versions/v21.0.0/index.html)
+- [x] [React Navigation](https://reactnavigation.org/)
+- [x] [Redux](https://redux.js.org)
+- [x] [Redux-Saga](https://redux-saga.js.org/)
+- [x] [ESLint](https://github.com/eslint/eslint)
+
+## Getting Started
+
+Install dependencies and run using [Yarn](https://yarnpkg.com/en/)
+```
+$ yarn
+$ yarn start
+```
+Open on phone using the [Expo](https://expo.io/) app.
+
+## References
+
+ - Base reference [react-native-boilerplate](https://github.com/ipeedy/react-native-boilerplate)
+ - [Login flow using redux-saga](https://github.com/mxstbr/login-flow)
+
+## TODO
+
+ - [] Hardware back button doesn't navigate back to previous screen, rather it closes the app. See:  https://github.com/react-community/react-navigation/issues/1349
+ - [] __Splash screen__ can be added to the AppNavigator. See: https://github.com/react-community/react-navigation/issues/156#issuecomment-276974937
