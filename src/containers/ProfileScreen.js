@@ -6,7 +6,7 @@ import { ProfileScreen } from 'screens';
 
 const mapDispatchToProps = dispatch => (
   bindActionCreators({
-    onPress: () => ({ type: RESET_TO_SIGN_IN }),
+    signOut: () => ({ type: RESET_TO_SIGN_IN }),
   }, dispatch)
 );
 

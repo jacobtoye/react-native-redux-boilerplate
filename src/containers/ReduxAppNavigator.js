@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { BackHandler } from 'react-native';
+import { Platform, BackHandler } from 'react-native';
 import {
   addNavigationHelpers,
   NavigationActions,
@@ -8,20 +8,34 @@ import {
   TabNavigator,
 } from 'react-navigation';
 
+import {
+  Modal1,
+  Modal2,
+  WelcomeScreen,
+} from 'screens';
 import * as Routes from 'constants/routes';
+
 import ProfileScreen from './ProfileScreen';
 import SignInScreen from './SignInScreen';
-import WelcomeScreen from './WelcomeScreen';
 
-const MainTabNavigator = TabNavigator({
-  [Routes.WELCOME_ROUTE]: { screen: WelcomeScreen },
-  [Routes.PROFILE_ROUTE]: { screen: ProfileScreen },
+const ModalTabNavigator = TabNavigator({
+  [Routes.MODAL1_ROUTE]: { screen: Modal1 },
+  [Routes.MODAL2_ROUTE]: { screen: Modal2 },
 }, {
+  mode: 'modal',
   navigationOptions: {
     tabBarVisible: false,
-    swipeEnabled: true,
-    animationEnabled: true,
+    swipeEnabled: false,
+    animationEnabled: false,
   },
+});
+
+const MainTabNavigator = StackNavigator({
+  [Routes.WELCOME_ROUTE]: { screen: WelcomeScreen },
+  [Routes.PROFILE_ROUTE]: { screen: ProfileScreen },
+  [Routes.MODAL_NAV_ROUTE]: { screen: ModalTabNavigator },
+}, {
+  headerMode: 'none',
 });
 
 export const AppNavigator = StackNavigator({
@@ -32,23 +46,29 @@ export const AppNavigator = StackNavigator({
 });
 
 class Navigation extends React.Component {
-  componentDidMount() {
-    BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
+  componentWillMount() {
+    if (Platform.OS !== 'android') {
+      return;
+    }
+
+    BackHandler.addEventListener('hardwareBackPress', () => {
+      const { dispatch, nav } = this.props;
+
+      // TODO: we may have gone back in a child nav and we want to go back on that nav
+      if (nav.index === 0) {
+        return false;
+      }
+
+      dispatch(NavigationActions.back());
+
+      return true;
+    });
   }
 
   componentWillUnmount() {
-    BackHandler.removeEventListener('hardwareBackPress', this.onBackPress);
-  }
-
-  onBackPress = () => {
-    const { dispatch, nav } = this.props;
-
-    if (nav.index === 0) {
-      return false;
+    if (Platform.OS === 'android') {
+      BackHandler.removeEventListener('hardwareBackPress');
     }
-
-    dispatch(NavigationActions.back());
-    return true;
   }
 
   render() {

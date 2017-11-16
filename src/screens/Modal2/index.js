@@ -8,17 +8,17 @@ import {
 import * as Routes from 'constants/routes';
 import * as Theme from 'constants/theme';
 
-export const WelcomeScreen = ({ onPress, navigation }) => (
+export const Modal2 = ({ navigation }) => (
   <ContainerView
     containerStyle={{
-      backgroundColor: Theme.Colors.ACCENT,
+      backgroundColor: Theme.Colors.PRIMARY,
       paddingTop: 72,
     }}
   >
-    <TouchableOpacity onPress={() => { navigation.navigate(Routes.PROFILE_ROUTE); }}>
-      <DisplayText>Tap me to go to Profile!</DisplayText>
+    <TouchableOpacity onPress={() => { navigation.goBack(null); }}>
+      <DisplayText>You can go back too :)</DisplayText>
     </TouchableOpacity>
   </ContainerView>
 );
 
-export default WelcomeScreen;
+export default Modal2;

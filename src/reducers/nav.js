@@ -9,10 +9,7 @@ import { AppNavigator } from 'containers/ReduxAppNavigator';
 
 import { RESET_TO_MAIN, RESET_TO_SIGN_IN } from 'actions/types';
 
-const INITIAL_STATE =
-  AppNavigator.router.getStateForAction(
-    AppNavigator.router.getActionForPathAndParams(SIGN_IN_ROUTE),
-  );
+const INITIAL_STATE = AppNavigator.router.getStateForAction(NavigationActions.init());
 
 export const nav = (state = INITIAL_STATE, action) => {
   let nextState;
@@ -21,6 +18,7 @@ export const nav = (state = INITIAL_STATE, action) => {
     {
       const resetToSignInAction = NavigationActions.reset({
         index: 0,
+        key: null,
         actions: [
           NavigationActions.navigate({ routeName: SIGN_IN_ROUTE }),
         ],
@@ -32,13 +30,9 @@ export const nav = (state = INITIAL_STATE, action) => {
     {
       const resetToMainAction = NavigationActions.reset({
         index: 0,
+        key: null,
         actions: [
-          NavigationActions.navigate({
-            routeName: MAIN_ROUTE,
-            action: NavigationActions.navigate({
-              routeName: WELCOME_ROUTE,
-            }),
-          }),
+          NavigationActions.navigate({ routeName: MAIN_ROUTE }),
         ],
       });
       nextState = AppNavigator.router.getStateForAction(resetToMainAction, state);
