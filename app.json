@@ -1,5 +1,9 @@
 {
   "expo": {
     "sdkVersion": "21.0.0"
+  },
+  "splash": {
+    "image": "./assets/splash.png",
+    "backgroundColor": "#2e2f40"
   }
 }
