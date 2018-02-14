@@ -25,13 +25,24 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      isReady: false,
+    };
+
     StatusBar.setHidden(true);
+  }
+
+  async cacheResourcesAsync() {
+    // TODO: cache assets etc
   }
 
   render() {
     if (!this.state.isReady) {
       return (
-        <appLoading />
+        <AppLoading
+          startAsync={this.cacheResourcesAsync}
+          onFinish={() => this.setState({ isReady: true })}
+        />
       );
     }
 
