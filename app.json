@@ -1,9 +1,22 @@
 {
   "expo": {
-    "sdkVersion": "21.0.0"
-  },
-  "splash": {
-    "image": "./assets/splash.png",
-    "backgroundColor": "#2e2f40"
+    "name": "RN Boilerplate",
+    "slug": "react-native-redux-boilerplate",
+    "icon": "./assets/icons/icon.png",
+    "privacy": "public",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "primaryColor": "#2e2f40",
+    "sdkVersion": "21.0.0",
+    "splash": {
+      "image": "./assets/splash.png",
+      "backgroundColor": "#2e2f40"
+    },
+    "ios": {
+      "bundleIdentifier": "com.jacobtoye.reactnativereduxboilerplate"
+    },
+    "android": {
+      "package": "com.jacobtoye.reactnativereduxboilerplate"
+    }
   }
 }
