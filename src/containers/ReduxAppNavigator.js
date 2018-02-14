@@ -7,6 +7,7 @@ import {
   StackNavigator,
   TabNavigator,
 } from 'react-navigation';
+import getSlideFromRightTransition from 'react-navigation-slide-from-right-transition';
 
 import {
   Modal1,
@@ -18,21 +19,18 @@ import * as Routes from 'constants/routes';
 import ProfileScreen from './ProfileScreen';
 import SignInScreen from './SignInScreen';
 
-const ModalTabNavigator = TabNavigator({
+const ModalTabNavigator = StackNavigator({
   [Routes.MODAL1_ROUTE]: { screen: Modal1 },
   [Routes.MODAL2_ROUTE]: { screen: Modal2 },
 }, {
   mode: 'modal',
-  navigationOptions: {
-    tabBarVisible: false,
-    swipeEnabled: false,
-    animationEnabled: false,
-  },
+  headerMode: 'none',
+  transitionConfig: getSlideFromRightTransition,
 });
 
 const MainTabNavigator = StackNavigator({
-  [Routes.WELCOME_ROUTE]: { screen: WelcomeScreen },
-  [Routes.PROFILE_ROUTE]: { screen: ProfileScreen },
+  [Routes.WELCOME_ROUTE]: { screen: WelcomeScreen, transitionConfig: getSlideFromRightTransition },
+  [Routes.PROFILE_ROUTE]: { screen: ProfileScreen, transitionConfig: getSlideFromRightTransition },
   [Routes.MODAL_NAV_ROUTE]: { screen: ModalTabNavigator },
 }, {
   headerMode: 'none',
