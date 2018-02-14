@@ -3,6 +3,7 @@ import { StatusBar } from 'react-native';
 import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
+import { AppLoading } from 'expo';
 
 import rootSaga from 'sagas';
 import ReduxAppNavigator from './ReduxAppNavigator';
@@ -28,7 +29,11 @@ class App extends React.Component {
   }
 
   render() {
-    // TODO: we might want to use Expo.AppLoading to make sure we've loaded everything
+    if (!this.state.isReady) {
+      return (
+        <appLoading />
+      );
+    }
 
     return (
       <Provider store={store}>
