@@ -10,7 +10,7 @@
       "backgroundColor": "#2e2f40"
     },
     "primaryColor": "#2e2f40",
-    "sdkVersion": "21.0.0",
+    "sdkVersion": "25.0.0",
     "splash": {
       "image": "./assets/splash.png",
       "backgroundColor": "#2e2f40"
