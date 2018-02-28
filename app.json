@@ -6,6 +6,9 @@
     "privacy": "public",
     "version": "1.0.0",
     "orientation": "portrait",
+    "androidStatusBar": {
+      "backgroundColor": "#2e2f40"
+    },
     "primaryColor": "#2e2f40",
     "sdkVersion": "21.0.0",
     "splash": {
