@@ -15,7 +15,7 @@
     // We can add/overwrite custom rules here
     "rules": {
       // React Native has JSX in JS files
-      "react/jsx-filename-extension": ["error", { extensions: [".js", ".jsx"] }],
+      "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
       "react/require-default-props": "off",
       // React Native includes images via require("../images/example.png")
       "global-require": "off",
@@ -23,7 +23,11 @@
       // Hack see: https://github.com/facebookincubator/create-react-app/issues/2631
       // and https://github.com/airbnb/javascript/pull/1482
       "jsx-a11y/href-no-hash": "off",
-      "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }]
+      "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }],
+
+      // Turning these warnings off since for some reason vscode iss erroring when use the eslint-import-resolver-babel-module package
+      "import/no-unresolved": "off",
+      "import/extensions": "off"
     },
     "settings": {
       "import/resolver": {
